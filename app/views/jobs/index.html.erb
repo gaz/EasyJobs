@@ -1,28 +1,11 @@
-<h1>Listing jobs</h1>
+<ul><% @jobs.each do |job| %>
+	<li> <%= link_to 'Show', job %><strong class="job_title"><%= job.title %></strong><span class="descripion"><%= job.description %></span></li></ul>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Company name</th>
-    <th>Details link</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.title %></td>
-    <td><%= job.description %></td>
-    <td><%= job.company_name %></td>
-    <td><%= job.details_link %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+
+<%= link_to 'Edit', edit_job_path(job) %>
 <% end %>
-</table>
+
 
 <br />
 
